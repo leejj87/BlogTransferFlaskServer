@@ -233,7 +233,7 @@ def request_code_parsing(blog_url):
         tor_proxy={'http':"socks5h://localhost:9050",
                    'https':"socks5h://localhost:9050"}
         r=requests
-        r_get=r.get(url,headers=headers,proxies=tor_proxy)
+        r_get=r.get(url,headers=headers)#,proxies=tor_proxy)
         req=r_get.text
         r_get.close()
         soup = BeautifulSoup(req, 'html.parser')
